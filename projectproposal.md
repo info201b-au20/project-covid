@@ -1,4 +1,4 @@
-# **Project Proposal_**
+# **Project Proposal**
 
 ## _**Domain of interest**_
 - _Why are you interested in this field/domain?_
