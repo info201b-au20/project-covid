@@ -7,7 +7,7 @@ As not only individuals who are experiencing this unprecedented time of a global
   
 - _What other examples of data driven project have you found related to this domain (share at least 3)?_
 
-We found a website called [The COVID Tracking Project] (https://covidtracking.com/) which keeps track of a variety of data. The University of Minnesota has a data driven project that keeps track of the [hospitalizations that are caused by Covid-19] (https://carlsonschool.umn.edu/mili-misrc-covid19-tracking-project) .  Another data driven project, [Covid-19 Behind Bars] (https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project) , is from UCLA Law, which keeps track of Covid-19 in the prison population 
+We found a website called [_The COVID Tracking Project_](https://covidtracking.com/) which keeps track of a variety of data. The University of Minnesota has a data driven project that keeps track of the [_hospitalizations that are caused by Covid-19_](https://carlsonschool.umn.edu/mili-misrc-covid19-tracking-project) .  Another data driven project, [_Covid-19 Behind Bars_](https://law.ucla.edu/academics/centers/criminal-justice-program/ucla-covid-19-behind-bars-data-project) , is from UCLA Law, which keeps track of Covid-19 in the prison population 
   
 - _What data-driven questions do you hope to answer about this domain (share at least 3)?_
 
