@@ -33,10 +33,12 @@ The third dataset we are using is a CSV file of coronavirus case racial data of 
 - _How many observations (rows) are in your data?_
 
   There are 1124 rows in the ‘cases’ table, 722 rows in the ‘hospitalizations’ table and 412 rows in the ‘deaths’ table.
+  There are 2999 rows in the coronavirus case racial data of states and territories in the United States.
 
 - _How many features (columns) are in the data?_
 
   There are 10 columns in the ‘cases’ table, ‘hospitalizations’ table, and ‘deaths’ table, including county, WeekStartDate, NewPos_All, Age 0-19, Age 20-39, Age 40-59, Age 60-79, Age 80+, Positive UnkAge, dtm_updated. 
+  There are 28 columns in the coronavirus case racial data of states and territories in the United States.
   
 - _What questions (from above) can be answered using the data in this dataset?_
 
