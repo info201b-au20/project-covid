@@ -6,25 +6,32 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library("knitr")
+knitr::opts_knit$set(root.dir = './scripts')
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+## Introduction
+As not only individuals who are experiencing this unprecedented time of a global pandemic and emergency, but as students at the University of Washington, where fellow peers and others have unfortunately been not so pandemic-friendly in their practices, causing outbreaks to surge, Covid-19 and the current response has been all-consuming in our lives through its impact on our sense of normalcy and safety as it has for people of any race. As we continue to see numbers rise and tensions grow, this issue and the overall instance have grown to be a great topic of interest for our group. It has deeply affected our families and us individually, and we are eager to learn and discover more by delving deep into the subject. We are interested in finding out how Covid-19 has impacted people of different race in the United States based on two of the datasets we've found(https://github.com/info201b-au20/project-covid/blob/gh-pages/data/PUBLIC_CDC_Event_Date_SARS.xlsx, https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv).
+## Summary
+```{r, include=FALSE}
+source("./scripts/summary.R")
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+In the summary section, we wanted to explore the number of people of different races who were tested positive for Covid-19. First off, we figured out the number of features and obervations of the dataset. Then we 
+## Table
+```{r}
+weekly_county_age_cases
 ```
+This table summarizes the number of weekly new cases by 
+```{r}
+cumulative_cases_by_race
+```
+This table summarizes the number of weekly new cases by 
+```{r}
+rate_cases_by_race
+```
+This table summarizes the number of weekly new cases by 
+## Visualization
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
