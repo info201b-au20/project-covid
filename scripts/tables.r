@@ -7,7 +7,7 @@ county_age_cases <-
   read_excel("./data/PUBLIC_CDC_EVENT_DATE_SARS.xlsx", sheet = 1)
 
 # Weekly new cases by age group in WA
-weekly_county_age_cases <- county_age_cases %>%
+weekly_cases_by_age <- county_age_cases %>%
   group_by(Date = WeekStartDate) %>%
   summarize(`Age 0-19` = sum(`Age 0-19`),
             `Age 20-39` = sum(`Age 20-39`),
@@ -15,8 +15,9 @@ weekly_county_age_cases <- county_age_cases %>%
             `Age 60-79` = sum(`Age 60-79`),
             `Age 80+` = sum(`Age 80+`))
 
-# Cumulative (total) cases of COVID by racial group in WA
+# Cumulative total cases of COVID by racial group in WA
 cumulative_cases_by_race <- race_data %>%
+  group_by(State) %>%
   filter(State == "WA") %>%
   arrange(Date) %>%
   summarize(Date = as.Date(as.character(Date), format = "%Y%m%d"),
@@ -29,12 +30,13 @@ cumulative_cases_by_race <- race_data %>%
             Multiracial = Cases_Multiracial,
             Other = Cases_Other,
             Unknown = Cases_Unknown) %>%
+  filter(State == "WA") %>%
   # Excluded first 9 rows due to irregularity
-  slice(- (1:7))
+  slice(- (1:9))
 
 # Rate of increase of new COVID cases by racial group in WA (percent)
 rate_cases_by_race <- race_data %>%
-  filter(State == "WA") %>%
+  group_by(State) %>%
   arrange(Date) %>%
   summarize(Date = as.Date(as.character(Date), format = "%Y%m%d"),
             White = ((as.numeric(Cases_White) - as.numeric(
@@ -60,6 +62,7 @@ rate_cases_by_race <- race_data %>%
             Unknown = ((as.numeric(Cases_Unknown) - as.numeric(
               lag(Cases_Unknown))) / as.numeric(lag(Cases_Unknown))) * 100) %>%
   mutate_if(is.numeric, round, digits = 1) %>%
+  filter(State == "WA") %>%
   # Excluded first 9 rows due to irregularity
   slice(- (1:9))
 
