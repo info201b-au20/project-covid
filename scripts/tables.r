@@ -16,7 +16,7 @@ weekly_county_age_cases <- county_age_cases %>%
             `Age 80+` = sum(`Age 80+`))
 
 # Cumulative (total) cases of COVID for racial groups in WA
-WA_race_data <- race_data %>%
+wa_race_data <- race_data %>%
   filter(State == "WA") %>%
   arrange(Date) %>%
   summarize(Date = as.Date(as.character(Date), format = "%Y%m%d"),
