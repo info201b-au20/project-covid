@@ -55,6 +55,6 @@ ggplot(data = cumulative_cases) +
   theme(plot.subtitle = element_text(face = "italic"))+
   theme(plot.title = element_text(face = "bold"))
 
-  
+  #Summary in Comments
   
   
