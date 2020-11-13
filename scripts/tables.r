@@ -2,9 +2,9 @@ library(tidyverse)
 library(readxl)
 library(knitr)
 
-race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
+race_data <- read.csv("Race Data Entry - CRDT.csv")
 county_age_cases <-
-  read_excel("./data/PUBLIC_CDC_EVENT_DATE_SARS.xlsx", sheet = 1)
+  read_excel("PUBLIC_CDC_Event_Date_SARS.xlsx")
 
 # Weekly new cases by age group in WA
 weekly_cases_by_age <- county_age_cases %>%
