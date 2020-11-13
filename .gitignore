@@ -35,7 +35,5 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 
-#Datasets in local repo
-./scripts/PUBLIC_CDC_Event_Date_SARS.xlsx
-./scrpts/Race Data Entry - CRDT.csv
+
 
