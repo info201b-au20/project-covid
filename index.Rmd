@@ -30,7 +30,28 @@ This table summarizes the number of weekly new cases by
 rate_cases_by_race
 ```
 This table summarizes the number of weekly new cases by 
+
 ## Visualization
+#### Chart 1: Cumulative Amount of Total Reported COVID-19 Cases in the State of Washington by Racial Groups
+```{r}
+source("./scripts/BarChart.R")
+```
+The purpose of this chart is to show the cumulative amount of total reported COVID-19 cases in the state of Washington by racial groups. Due to the nature of the chart being cumulative, a bar chart accurately captures the total value (cases) of the different categories (racial groups). What is notable about this chart is the overwhelming amount of race “Unknown” cases there are as that impacts the data and alters the information drawn from the set as well. It is also important to note the large amount of cases recorded as “White” and “Hispanic/Latino” in comparison to the other groups considered. These two observations are especially insightful in terms of the disparities seen in recording cases by race, which lead to a more narrowed and misleading perception as to how the pandemic is effecting certain communities. For example, the Black community as well as the American Indian community, which has notably been heavily impacted and harmed by COVID-19, but the data seems to paint a different tale. On the other hand, the number surrounding Hispanic/Latino populations seem to align with what we know in terms of how heavily migrant workers in more rural, agricultural parts of Washington have been ravaged by the virus.
+
+#### Chart 2: How Different Age Groups Are Affected By Covid-19
+```{r}
+source("./scripts/ViolinPlot.R")
+```
+The purpose of including this chart is to see how different age groups are
+affected by Covid-19, and to see which groups contribute most the number of
+cases present. In this plot we are able to that the most mean number of weekly
+cases is from the age 20-39 group, this group is also has the max number of 
+cases in a pparticular week during the time of data collection
+
+#### Chart 3:
+```{r}
+source("./scripts/")
+```
 
 
 
