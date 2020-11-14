@@ -11,6 +11,7 @@ source("./scripts/summary.R")
 source("./scripts/BarChart.R")
 source("./scripts/ViolinPlot.R")
 source("./scripts/tables.R")
+source("./scripts/scatterPlot.R")
 library("knitr")
 ```
 
@@ -48,10 +49,9 @@ avg_weekly_cases_age
 ```
 The purpose of including this chart is to see how different age groups are affected by Covid-19, and to see which groups contribute most the number of cases present. In this plot we are able to that the most mean number of weekly cases is from the age 20-39 group, this group is also has the max number of cases in a pparticular week during the time of data collection
 
-#### Chart 3:
+#### Chart 3: Total amount of death over time
 ```{r}
-
+race_data
 ```
-The purpose of this scatterplot chart is to see the changes of number of daily new cases between April and October. In this scatter plot table, we are able to tell the highest number of daily new cases by looking at the peak of the chart, which is in July. By looking at the entire graph, we are also able to tell the general growth trend of daily new cases over time with the month of April, July, and October seeing the most amount of people who tested postive for Covid-19.
-
+The purpose of the chart is to visually display how does the speed and the number of death cases due to covid 19 in Washington over time. From the graph, we could see that the number of cases increase steadly as time passby. The acceleration of the death increase appears to be negative in July. There are some variations between the best fit smooth line, but there is no dramatic increase or descrease in short period of time.
 
