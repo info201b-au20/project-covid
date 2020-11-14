@@ -46,11 +46,7 @@ The purpose of this chart is to show the cumulative amount of total reported COV
 ```{r}
 avg_weekly_cases_age
 ```
-The purpose of including this chart is to see how different age groups are
-affected by Covid-19, and to see which groups contribute most the number of
-cases present. In this plot we are able to that the most mean number of weekly
-cases is from the age 20-39 group, this group is also has the max number of 
-cases in a pparticular week during the time of data collection
+The purpose of including this chart is to see how different age groups are affected by Covid-19, and to see which groups contribute most the number of cases present. In this plot we are able to that the most mean number of weekly cases is from the age 20-39 group, this group is also has the max number of cases in a pparticular week during the time of data collection
 
 #### Chart 3:
 ```{r}
