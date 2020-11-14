@@ -54,9 +54,8 @@ cases in a pparticular week during the time of data collection
 
 #### Chart 3:
 ```{r}
-source("./scripts/")
-```
-The purpose of this
 
+```
+The purpose of this scatterplot chart is to see the changes of number of daily new cases between April and October. In this scatter plot table, we are able to tell the highest number of daily new cases by looking at the peak of the chart, which is in July. By looking at the entire graph, we are also able to tell the general growth trend of daily new cases over time with the month of April, July, and October seeing the most amount of people who tested postive for Covid-19.
 
 
