@@ -29,7 +29,7 @@ View(cumulative_cases)
 library(ggplot2)
 theme_set(theme_classic())
 #How to add values above bar/column
-ggplot(data = cumulative_cases) + 
+plot_two <- ggplot(data = cumulative_cases) + 
   geom_col(mapping = aes(x = "a. Unknown", y = 34668), fill = "mediumorchid") +
   geom_label(mapping = aes(x = "a. Unknown", y = 34668, label = 34668)) +
   geom_col(mapping = aes(x = "b. White", y = 29290), fill = "lightslateblue") + 
