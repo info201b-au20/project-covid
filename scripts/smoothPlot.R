@@ -10,7 +10,7 @@ race_data <- race_data %>%
 
 race_data$Date <- as.Date(paste(substr(race_data$Date, 1, 4), substr(race_data$Date, 5, 6), "01", sep = "-"))
 
-scatter_plot_chart <- ggplot(race_data) +
+smooth_plot_chart <- ggplot(race_data) +
   geom_smooth(aes(x = Date, y = Deaths_Total))+
   scale_x_date(date_breaks = "1 month")+
   labs(

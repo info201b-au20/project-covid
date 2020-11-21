@@ -12,7 +12,7 @@ source("./scripts/summary.R")
 source("./scripts/BarChart.R")
 source("./scripts/ViolinPlot.R")
 source("./scripts/tables.R")
-source("./scripts/scatterPlot.R")
+source("./scripts/smoothPlot.R")
 library("knitr")
 ```
 
@@ -51,7 +51,7 @@ The purpose of including this chart is to see how different age groups are affec
 
 #### Chart 3: Total amount of death over time
 ```{r, fig.align = 'center', message = FALSE}
-scatter_plot_chart
+smooth_plot_chart
 ```
-The purpose of the chart is to visually display how does the speed and the number of death cases due to covid 19 in Washington over time. From the graph, we could see that the number of cases increase steadly as time passby. The acceleration of the death increase appears to be negative in July. There are some variations between the best fit smooth line, but there is no dramatic increase or descrease in short period of time.
+The purpose of the chart is to visually display how does the speed and the number of death cases due to covid 19 in Washington over time. From the graph, we could see that the number of cases increase steadly as time passby. The acceleration of the death increase appears to be negative in July. There are some variations between the best fit smooth line, but there is no dramatic increase or descrease in short period of time.This gives us a better understanding of the total number of death cases over time. 
 
