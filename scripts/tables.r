@@ -65,8 +65,3 @@ rate_cases_by_race <- race_data %>%
   filter(State == "WA") %>%
   # Excluded first 9 rows due to irregularity
   slice(- (1:9))
-
-# Displaying the tables
-kable(weekly_county_age_cases)
-kable(cumulative_cases_by_race)
-kable(rate_cases_by_race)

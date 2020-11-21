@@ -1,5 +1,5 @@
 library("ggplot2")
-source("tables.r")
+source("./scripts/tables.R")
 
 #The purpose of including this chart is to see how different age groups are
 #affected by Covid-19, and to see which groups contribute most the number of
@@ -24,5 +24,4 @@ plot <- ggplot(data = avg_weekly_cases_age, aes(x = age_group, y = weekly_cases)
        x = "Age Group", 
        y = "Weekly Cases")
 
-plot + stat_summary(fun = mean, geom = "point", size = 1, color = "blue") 
-  
+plot + stat_summary(fun = mean, geom = "point", size = 1, color = "blue")

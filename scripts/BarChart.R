@@ -19,12 +19,9 @@ cumulative_cases_by_race <- race_data %>%
             "Other" = Cases_Other,
             "Unknown" = Cases_Unknown) %>%
   filter(State == "WA") %>% 
-  slice(- (1:9)) %>% 
-kable(cumulative_cases_by_race)
-View(cumulative_cases_by_race)
+  slice(- (1:9))
 
 cumulative_cases <- top_n(cumulative_cases_by_race,1)
-View(cumulative_cases)
 
 library(ggplot2)
 theme_set(theme_classic())
@@ -54,7 +51,3 @@ plot_two <- ggplot(data = cumulative_cases) +
   theme(axis.text.x = element_text(angle= 45, vjust= 0.5))+
   theme(plot.subtitle = element_text(face = "italic"))+
   theme(plot.title = element_text(face = "bold"))
-
-  #Summary in Comments
-  
-  
