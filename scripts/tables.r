@@ -15,6 +15,15 @@ weekly_cases_by_age <- county_age_cases %>%
             `Age 60-79` = sum(`Age 60-79`),
             `Age 80+` = sum(`Age 80+`))
 
+#AVerage weekly new cases by age group in WA
+avg_weekly_cases_age <- weekly_cases_by_age %>%
+  select(`Age 0-19`,
+         `Age 20-39`,
+         `Age 40-59`,
+         `Age 60-79`,
+         `Age 80+`) %>%
+  gather(key = age_group, value = weekly_cases)
+
 # Cumulative total cases of COVID by racial group in WA
 cumulative_cases_by_race <- race_data %>%
   group_by(State) %>%
@@ -65,3 +74,4 @@ rate_cases_by_race <- race_data %>%
   filter(State == "WA") %>%
   # Excluded first 9 rows due to irregularity
   slice(- (1:9))
+
