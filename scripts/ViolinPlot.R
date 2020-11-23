@@ -1,5 +1,5 @@
 library("ggplot2")
-source("tables.r")
+source("./scripts/tables.r")
 
 #The purpose of including this chart is to see how different age groups are
 #affected by Covid-19, and to see which groups contribute most the number of

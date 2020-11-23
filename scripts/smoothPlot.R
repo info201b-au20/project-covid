@@ -3,7 +3,7 @@ library(dplyr)
 library("readxl")    
 library("ggplot2")
 
-race_data <- read.csv("https://raw.githubusercontent.com/info201b-au20/project-covid/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv")
+race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
 
 race_data <- race_data %>% 
   filter(State == "WA")
