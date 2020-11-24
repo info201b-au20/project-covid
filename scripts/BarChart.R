@@ -4,7 +4,7 @@ library(knitr)
 
 race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
 
-cumulative_cases_by_race <- race_data %>%
+cumulative_cases_perrace <- race_data %>%
   group_by(State) %>%
   filter(State == "WA") %>%
   arrange(Date) %>%
@@ -21,7 +21,7 @@ cumulative_cases_by_race <- race_data %>%
   filter(State == "WA") %>% 
   slice(- (1:9))
 
-cumulative_cases <- top_n(cumulative_cases_by_race,1)
+cumulative_cases <- top_n(cumulative_cases_perrace,1)
 
 library(ggplot2)
 theme_set(theme_classic())
