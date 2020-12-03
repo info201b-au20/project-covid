@@ -11,7 +11,7 @@ ui <- navbarPage(
                between 4.12.2020 to 10.28.2020"),
     dateRangeInput(
       inputId = 'Date',
-      lable = "Select the date range",
+      lablel = "Select the date range",
       start = min(Date),
       end = max(Date),
       min = min(Date),
@@ -21,7 +21,7 @@ ui <- navbarPage(
     ),
     textOutput("startdate"),
     textOutput("enddate"),
-    textOutput("range")
+    textOutput("range"),
     
     sidebarLayout(
       checkboxGroupInput(
