@@ -17,13 +17,13 @@ library(plotly)
 
 data <- read.csv("../data/Race Data Entry - CRDT.csv")
 
-build_smooth_num_death <- function(data, state_name){
+build_smooth_num_death <- function(data, state_name, color_selected){
     race_data <- data %>% 
          filter(State == state_name)
     race_data$Date <- as.Date(paste(substr(race_data$Date, 1, 4), substr(race_data$Date, 5, 6), "01", sep = "-"))
 
     smooth_plot_chart <- ggplot(race_data) +
-        geom_smooth(aes(x = Date, y = Deaths_Total))+
+        geom_smooth(aes(x = Date, y = Deaths_Total), color = color_selected, na.rm = TRUE)+
         scale_x_date(date_breaks = "1 month")+
         labs(
             x='Time',
@@ -32,8 +32,6 @@ build_smooth_num_death <- function(data, state_name){
         )
     
 }
-
-build_smooth_num_death(data, "CO")
 
 
 ###UI#####
@@ -48,6 +46,11 @@ selectState <- selectInput(
     choices = stateNames
 )
 
+selectColor <- selectInput(
+    "color_selected",
+    label = "What is your favorie Color",
+    choices = c("Yellow", "Red","Blue")
+)
 ###
 
 
@@ -62,7 +65,8 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            selectState
+            selectState,
+            selectColor
         ),
 
         # Show a plot of the generated distribution
@@ -78,7 +82,7 @@ server <- function(input, output) {
 
 
     output$plot <- renderPlotly({
-        plot <- build_smooth_num_death(data, input$state_name)
+        plot <- build_smooth_num_death(data, input$state_name, input$color_selected)
         ggplotly(plot)
     })
 }
