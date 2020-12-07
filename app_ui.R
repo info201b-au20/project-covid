@@ -31,15 +31,15 @@ introduction <- tabPanel(
             tags$h4("About the Data and the Sources:"),
             tags$p(tags$a(
                 href = "https://www.doh.wa.gov/Emergencies/COVID19/DataDashboard",
-                "Dataset Source 1"
+                "Dataset Source 1: Washington State Department of Health"
             )),
             tags$p(tags$a(
                 href = "https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx",
-                "Dataset Source 2"
+                "Dataset Source 2: King County COVID-19 Data Dashboards"
             )),
             tags$p(tags$a(
                 href = "https://covidtracking.com/race",
-                "Dataset Source 3"
+                "Dataset Source 3: The COVID Tracking Project"
             )),
             data1_intro,
             data2_intro,
