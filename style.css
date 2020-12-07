@@ -1,0 +1,36 @@
+body{
+  background-color: #ebf2ef;
+}
+h1{
+  font-family: "Times New Roman", Times, serif;
+  font-weight:bold;
+  border-radius: 10;
+}
+img{
+  max-height: 200px;
+  object-fit: fill;
+}
+h2{
+  color: #0d1b36;
+  font-family: "Times New Roman", Times, serif;
+}
+h4{
+  color: #4b4279;
+  font-family: "Times New Roman", Times, serif;
+  font-weight:bold;
+}
+h5{
+  color: #416ca4;
+  font-family: "Times New Roman", Times, serif;
+  font-style:italic;
+}
+p{
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+hr {
+ border-top: 1px solid #f97a85;
+}
+a {
+  color: #865081;
+}
