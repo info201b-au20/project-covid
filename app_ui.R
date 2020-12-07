@@ -49,56 +49,52 @@ introduction <- tabPanel(
 ### FIRST PAGE by Grant Y ###
   
 ### SECOND PAGE by Jackie S ###
-  cases_comparison_panel <- tabPanel(
-    "Cases Comparison Chart",
-    titlePanel("Compare the number of cases of African Americans in WA/NY/CA 
-               between 4.12.2020 to 10.28.2020"),
-    dateRangeInput(
-      inputId = 'Date',
-      lablel = "Select the date range",
-      start = min(Date),
-      end = max(Date),
-      min = min(Date),
-      max = max(Date),
-      format = "yyyy/mm/dd",
-      separator = "-"
-    ),
-    textOutput("startdate"),
-    textOutput("enddate"),
-    textOutput("range"),
-    
-    sidebarLayout(
-      checkboxGroupInput(
-        inputId = "State", 
-        label = "State to show:",
-        choices =  c("CA" = "CA",
-                     "NY" = "NY",
-                     "WA" = "WA"),
-        selected = "WA"
-      )
-    ),
-    
-    mainPanel(
-      plotlyOutput('plot'),
-      p(
-        "Source:",
-        a("Race Data Entry - CRDT.csv",
-          href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
-        )
-      ),
-      p(
-        "The reason that I included this chart is to "
-      )
+# Color input of the line chart
+color_input <- selectInput(
+      inputId = "color_input",
+      label = "Color",
+      choices = list("Red" = "red", "Green" = "green")
     )
+# State input of the line chart
+state_input <- selectInput(
+      inputId = "Statename",
+      label = "State to show:",
+      choices =  c("CA" = "CA",
+                   "WA" = "WA"),
+      selected = "WA"
+    )
+# Creates the tab panel
+cases_comparison_panel <- tabPanel(
+  "Cases Comparison Chart",
+  titlePanel("Compare the number of cases of African Americans in WA/CA
+             between 4.12.2020 to 10.28.2020"),
+  color_input,
+  state_input
+),
+
+mainPanel(
+  plotlyOutput('plot'),
+  p(
+    "Source:",
+    a("Race Data Entry - CRDT.csv",
+      href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
+    )
+  ),
+  p(
+    "The two graphs are intended to find out the general trend of the number of Covid cases of African Americans in WA and CA based on the position of the red dots of each month. The general trend shown in each line chart is very similar in that the number of cases of African Americans in both CA and WA are skyrocketing from April to October."
   )
+)
 )
 
 ### THIRD PAGE by Chandra B ###
+
+### CONCLUSION by Minjie K ###
 
 ### LAYOUT ###
 ui <- navbarPage(
     includeCSS("style.css"),
     title = tags$h1("COVID-19 & the Effects on Racial Groups"),
     selected = tags$h2("Introduction"),
-    introduction
+    introduction,
+    cases_comparison_panel
 )
