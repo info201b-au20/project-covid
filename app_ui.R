@@ -1,7 +1,7 @@
 library(shiny)
 library(plotly)
 library(ggplot2)
-data <- read.csv("./data/Race Data Entry - CRDT.csv")
+race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
 ### INTRODUCTION by Natassja B ###
 data1_intro <- tags$p("The first dataset we are using is an XML spreadsheet of the number of cases of 2020 COVID-19 deaths by week of illness onset, county, and age in the state of Washington (categorized by age groups: 0-19, 20-39, 40-59, 60-79, 80+, and unknown). The data spans from March 8, 2020 to October 11, 2020. The data is current as of October 11th, 2020, and it has been updated every Sunday. It is collected by the Washington State Department of Health.")
 data2_intro <- tags$p("The second dataset we are using is an XML spreadsheet of the overall coronavirus cases counts and hospitalization/death rates by city, health reporting area, and zip code in King County, Washington, The data is updated as of October 19, 2020. It has been collected by Public Health - Seattle & King County epidemiologists and gets reported to the Washington State Department of Health, and is cross-checked by hospitals and investigators to ensure the accuracy of the data. Only positive or negative test results are reflected in the counts and it excludes tests where results are pending, inconclusive, or that were not performed.")
@@ -127,6 +127,5 @@ ui <- navbarPage(
     title = tags$h1("COVID-19 & the Effects on Racial Groups"),
     selected = tags$h2("Introduction"),
     introduction,
-    cases_comparison_panel,
-    death_state_comparision
+    cases_comparison_panel
 )

@@ -24,11 +24,11 @@ make_plot <- function(data, color_input, state_selected){
 ###############################################
 ## For the first page by GRANT 
 build_smooth_num_death <- function(data, state_name, color_selected){
-  race_data <- data %>% 
+  state_race_data <- data %>% 
     filter(State == state_name)
-  race_data$Date <- as.Date(paste(substr(race_data$Date, 1, 4), substr(race_data$Date, 5, 6), "01", sep = "-"))
+  state_race_data$Date <- as.Date(paste(substr(state_race_data$Date, 1, 4), substr(state_race_data$Date, 5, 6), "01", sep = "-"))
   
-  smooth_plot_chart <- ggplot(race_data) +
+  smooth_plot_chart <- ggplot(state_race_data) +
     geom_smooth(aes(x = Date, y = Deaths_Total), color = color_selected, na.rm = TRUE)+
     scale_x_date(date_breaks = "1 month")+
     labs(
