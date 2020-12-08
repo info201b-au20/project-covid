@@ -63,7 +63,7 @@ selectColor <- selectInput(
   choices = c("Yellow", "Red","Blue")
 )
 death_state_comparision <- tabPanel(
-  titlePanel("Compare the trend of the number of total deaths in Each State"),
+  titlePanel("Trend in Total Death"),
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
@@ -96,7 +96,7 @@ state_input <- selectInput(
     )
 # Creates the tab panel
 cases_comparison_panel <- tabPanel(
-  titlePanel("Compare the number of cases of African Americans in WA/CA between 4.12.2020 to 10.28.2020"),
+  titlePanel("Comparison"),
   sidebarLayout(
     sidebarPanel(
         color_input,
