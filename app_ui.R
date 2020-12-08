@@ -286,6 +286,9 @@ cases_race_comparison <- tabPanel(
       )
       ,
       br(),
+      p(
+        "CHANDRA'S CHART SPIEL/OBSERVATIONS HERE."
+      )
       
     ))
 )
