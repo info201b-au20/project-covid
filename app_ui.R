@@ -77,7 +77,7 @@ chart3_intro <- tags$p("The third and final graph illustrates the cumulative
 introduction <- tabPanel(
   title = tags$h2("Introduction"),
   mainPanel(
-    tags$h2("Introduction"),
+    tags$h2("Welcome!"),
     tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
     tags$h4("Project Mission:"),
     tags$p("As not only individuals who are experiencing this 
