@@ -26,10 +26,10 @@ make_plot <- function(data, color_input, state_selected){
 build_smooth_num_death <- function(state_name, color_selected){
   state_race_data <- race_data %>%
     filter(State == state_name)
-  state_race_data$Date <- as.Date(paste(substr(state_race_data$Date, 1, 4), substr(state_race_data$Date, 5, 6), "01", sep = "-"))
+  state_race_data$Date <- unique(as.Date(as.character(state_race_data$Date), format = "%Y%m%d"))
   
   smooth_plot_chart <- ggplot(state_race_data) +
-    geom_smooth(aes(x = Date, y = Deaths_Total), color = color_selected, na.rm = TRUE)+
+    geom_line(aes(x = Date, y = Deaths_Total), color = color_selected, na.rm = TRUE)+
     scale_x_date(date_breaks = "1 month")+
     labs(
       x='Date',
