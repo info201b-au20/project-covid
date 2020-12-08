@@ -47,7 +47,7 @@ introduction <- tabPanel(
         ))
   
 ### FIRST PAGE by Grant Y ##############################################
-stateNames <- data %>% 
+stateNames <- race_data %>%
   select(State) %>% 
   distinct(State)
 
