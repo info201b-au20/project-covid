@@ -65,12 +65,12 @@ state_input <- selectInput(
     )
 # Creates the tab panel
 cases_comparison_panel <- tabPanel(
-  "Cases Comparison Chart",
-  titlePanel("Compare the number of cases of African Americans in WA/CA
-             between 4.12.2020 to 10.28.2020"),
-  color_input,
-  state_input
-),
+  titlePanel("Compare the number of cases of African Americans in WA/CA between 4.12.2020 to 10.28.2020"),
+sidebarLayout(
+    sidebarPanel(
+        color_input,
+        state_input
+    ),
 
 mainPanel(
   plotlyOutput('plot'),
@@ -82,10 +82,10 @@ mainPanel(
   ),
   p(
     "The two graphs are intended to find out the general trend of the number of Covid cases of African Americans in WA and CA based on the position of the red dots of each month. The general trend shown in each line chart is very similar in that the number of cases of African Americans in both CA and WA are skyrocketing from April to October."
+   )
   )
+ )
 )
-)
-
 ### THIRD PAGE by Chandra B ###
 
 ### CONCLUSION by Minjie K ###
