@@ -77,7 +77,7 @@ chart3_intro <- tags$p("The third and final graph illustrates the cumulative
 introduction <- tabPanel(
   title = tags$h2("Introduction"),
   mainPanel(
-    tags$h2("Introduction"),
+    tags$h2("Welcome!"),
     tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
     tags$h4("Project Mission:"),
     tags$p("As not only individuals who are experiencing this 
@@ -168,10 +168,11 @@ death_state_comparision <- tabPanel(
           href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
         )
       ),
-      p('This interactive chart is intended to explore the number of deaths 
-        across different state with respect to time. This gives us a good tool 
-        to see an overview of how each state was influenced by the the COVID-19
-        virus in relation to total deaths. The general trend across states is
+      p('This interactive chart is intended to explore the number as
+        well as the general trend of total deaths across different states 
+        with respect to time progression. This gives us a good tool to see an 
+        overview of how each state was influenced by the the COVID-19 virus in 
+        relation to total deaths. The general trend across states is
         a steady rise in lives lost to the 2020 pandemic.')
     )
   )
@@ -285,6 +286,9 @@ cases_race_comparison <- tabPanel(
       )
       ,
       br(),
+      p(
+        "CHANDRA'S CHART SPIEL/OBSERVATIONS HERE."
+      )
       
     ))
 )

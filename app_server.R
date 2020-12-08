@@ -10,17 +10,15 @@ unique(race_data$State)
 make_plot <- function(data, color_input, state_selected){
       black_data <- race_data %>%
         filter(State == state_selected)
-        black_data$Date <- unique(as.Date(as.character(black_data$Date), format = "%Y%m%d"))
- # Make plot using ggplot
+      black_data$Date <- unique(as.Date(as.character(black_data$Date), format = "%Y%m%d"))
       plot_covid <- ggplot(data = black_data) +
         geom_point(
         mapping = aes_string(x = black_data$Date, y = black_data$Cases_Black),
         color = color_input
       ) +
       scale_x_date(date_breaks = "1 month") +
-      ggtitle("Compare the number of cases of African Americans in WA/CA 
-              from April to October 2020") +
-      labs(x = "Date", y = "Cases")
+      ggtitle("Comparison of Total Cases of African Americans in WA & CA") +
+      labs(x = "Date", y = "Total Cases")
 }
 
 ###############################################
@@ -34,9 +32,9 @@ build_smooth_num_death <- function(state_name, color_selected){
     geom_smooth(aes(x = Date, y = Deaths_Total), color = color_selected, na.rm = TRUE)+
     scale_x_date(date_breaks = "1 month")+
     labs(
-      x='Time',
-      y='Total Death',
-      title = "Total Death OverTime"
+      x='Date',
+      y='Total Deaths',
+      title = "Total Deaths Trend Over Time by State"
     )
 }
 
@@ -72,11 +70,11 @@ server <- function(input, output) {
       mode = "lines+markers",
       hovertemplate = "%{y}"
     ) %>%
-      layout(title = "Coronavirus Cases by Race in the United States",
+      layout(title = "COVID-19 Cases by Race in the U.S.",
              xaxis = list(title = "Date",
                           range = input$dateRangeInput,
                           fixedrange = TRUE),
-             yaxis = list(title = "Cases of coronavirus"),
+             yaxis = list(title = "Total Cases"),
              showlegend = TRUE,
              hovermode = "x unified"
       )
