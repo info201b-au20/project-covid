@@ -54,4 +54,30 @@ server <- function(input, output) {
     plot_covid <- make_plot(black_data, input$color_input, input$Statename)
     ggplotly(plot_covid)
   })
+  
+  #####Third Page######
+  filteredData <- reactive({
+    data_to_render[data_to_render$Race %in% input$checkboxRaces, ]
+  })
+  
+  output$table <- renderTable(raw_data_table)
+  output$chart <- renderPlotly({
+    plot_ly(
+      data = filteredData(),
+      x = ~Date,
+      y = ~Cases,
+      split = ~Race,
+      type = "scatter",
+      mode = "lines+markers",
+      hovertemplate = "%{y}"
+    ) %>%
+      layout(title = "Coronavirus Cases by Race in the United States",
+             xaxis = list(title = "Date",
+                          range = input$dateRangeInput,
+                          fixedrange = TRUE),
+             yaxis = list(title = "Cases of coronavirus"),
+             showlegend = TRUE,
+             hovermode = "x unified"
+      )
+  })  
 }
