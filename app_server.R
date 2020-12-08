@@ -79,5 +79,5 @@ server <- function(input, output) {
              showlegend = TRUE,
              hovermode = "x unified"
       )
-  })  
+  })
 }

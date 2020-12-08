@@ -1,6 +1,7 @@
 library(shiny)
 library(plotly)
 library(ggplot2)
+library(tidyverse)
 race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
 ### INTRODUCTION by Natassja B ###
 data1_intro <- tags$p("The first dataset we are using is an XML spreadsheet of 
