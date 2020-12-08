@@ -295,6 +295,50 @@ cases_race_comparison <- tabPanel(
 
 
 ### CONCLUSION by Minjie K ###
+
+conclusion <- tabPanel(
+  title = tags$h2("Conclusion"),
+  mainPanel(
+    tags$h2("Conclsuion"),
+    tags$h4("Key Takeaways"),
+    tags$h5("1. Covid-19 is REAL! And it doesn't seem to be slowing down"),
+    tags$p("As we can see from the 'State Death Trends', it shows that there is 
+           an increasing number of deaths due to Covid-19.  From this graph we
+           can also conclude that the spread of Covid-19 is not slowing down
+           rather it is being spread faster than it previously has been. We can
+           conclude this based on the number of deaths because as the number of
+           deaths increase it must mean that more people are contracting the 
+           Covid-19 virus."),
+    tags$h5("2. Just because you're in a different state doesn't mean
+            you are safe"),
+    tags$p("We compared 2 different states and how Covid-19 affected one
+           particular race(African-American) in both states.  As y'all can 
+           proabably guess the Covid-19 case trend was similar for both states:
+           it had an upward trend and many people got it.  While the physical 
+           number of cases were different for both state, that could be due to
+           the difference in population between Washington and California.  In 
+           general, we can conclude that no matter which state we are in, 
+           whether it is a highly populated state or a lowly populated state,
+           people should still take precautions against the virus because it 
+           doesn't care what state you are in."),
+    tags$h5("3. While we would like to say that a certain race is more
+            susceptible to Covid-19, unfortunately we can't conclude that"),
+    tags$p("Based on the 'Cases by Race' graph, we could quickly conclude that
+           white people are more susceptible to Covid-19, but that's not 
+           neccesarily the case. There might be more cases for white people 
+           simply because the majority of people who live in the USA are white.
+           Hispanic/Latino people could have more cases than some other races
+           becuase there are more people that identify with that race that are
+           from areas that are lower in the socio-economic scale and they simply
+           don't have the means to have good quality personal protection
+           equipment or the means to take time off work.  Bottum line is that we
+           are not able to conclude that based on biology a certain race is more
+           suseptible to contracting Covid-19; we have to consider other
+           factors."),
+    tags$h5("Last but not least, remember to..."),
+    tags$img(src = "https://www.statesboroga.gov/wp-content/uploads/2020/07/Copy-of-Copy-of-Copy-of-Copy-of-30000.png"),
+    
+  ))
 ### LAYOUT ###
 ui <- navbarPage(
   includeCSS("style.css"),
@@ -303,5 +347,6 @@ ui <- navbarPage(
   introduction,
   death_state_comparision,
   cases_comparison_panel,
-  cases_race_comparison
+  cases_race_comparison,
+  conclusion
 )
