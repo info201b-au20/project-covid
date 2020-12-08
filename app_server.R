@@ -17,6 +17,7 @@ make_plot <- function(data, color_input, state_selected){
         mapping = aes_string(x = black_data$Date, y = black_data$Cases_Black),
         color = color_input
       ) +
+      scale_x_date(date_breaks = "1 month") +
       ggtitle("Compare the number of cases of African Americans in WA/CA from April to October 2020") +
       labs(x = "Date(month)", y = "Cases")
 }
@@ -24,7 +25,7 @@ make_plot <- function(data, color_input, state_selected){
 ###############################################
 ## For the first page by GRANT 
 build_smooth_num_death <- function(data, state_name, color_selected){
-  state_race_data <- data %>% 
+  state_race_data <- race_data %>%
     filter(State == state_name)
   state_race_data$Date <- as.Date(paste(substr(state_race_data$Date, 1, 4), substr(state_race_data$Date, 5, 6), "01", sep = "-"))
   
@@ -44,7 +45,7 @@ build_smooth_num_death <- function(data, state_name, color_selected){
 server <- function(input, output) {
   #####First Page #######
   output$plot <- renderPlotly({
-    plot <- build_smooth_num_death(race_data, input$state_name, input$color_selected)
+    plot <- build_smooth_num_death(state_race_data, input$state_name, input$color_selected)
     ggplotly(plot)
   })
   
