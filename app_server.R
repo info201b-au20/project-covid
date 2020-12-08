@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(plotly)
 
-race_data <- read.csv("../data/Race Data Entry - CRDT.csv")
+race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
 unique(race_data$State)
 
 ## For the second page by Jackie Si.
