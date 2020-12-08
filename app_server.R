@@ -10,6 +10,7 @@ unique(race_data$State)
 make_plot <- function(data, color_input, state_selected){
       black_data <- race_data %>%
         filter(State == state_selected)
+      black_data$Date <- as.Date(paste(substr(black_data$Date, 1, 4), substr(black_data$Date, 5, 6), "01", sep = "-"))
  # Make plot using ggplot
       plot_covid <- ggplot(data = black_data) +
         geom_smooth(
@@ -22,8 +23,7 @@ make_plot <- function(data, color_input, state_selected){
 
 # Server
 server <- function(input, output) {
-  black_data$Date <- as.Date(paste(substr(black_data$Date, 1, 4), substr(black_data$Date, 5, 6), "01", sep = "-"))
-
+  
   output$plot <- renderPlotly({
     plot_covid <- make_plot(black_data, input$color_input, input$Statename)
     ggplotly(plot_covid)
