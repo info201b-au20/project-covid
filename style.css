@@ -3,8 +3,7 @@ body{
 }
 h1{
   font-family: "Times New Roman", Times, serif;
-  font-weight:bold;
-  border-radius: 10;
+  font-weight: 500;
   color: #0d1b36;
 }
 img{
@@ -13,6 +12,7 @@ img{
 h2{
   color: #0d1b36;
   font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
 }
 h4{
   color: #4b4279;
@@ -23,6 +23,11 @@ h5{
   color: #416ca4;
   font-family: "Times New Roman", Times, serif;
   font-style:italic;
+}
+h6{
+  color: #865081;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
 }
 p{
   color: black;
