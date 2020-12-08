@@ -134,7 +134,7 @@ introduction <- tabPanel(
     tags$hr()
   ))
 
-### FIRST PAGE by Grant Y ##############################################
+### FIRST PAGE by Grant Y ###
 stateNames <- race_data %>%
   select(State) %>% 
   distinct(State)
@@ -179,7 +179,7 @@ death_state_comparision <- tabPanel(
   )
 )
 
-### SECOND PAGE by Jackie S #############################################
+### SECOND PAGE by Jackie S ###
 # Color input of the line chart
 color_input <- selectInput(
   inputId = "color_input",
@@ -225,7 +225,6 @@ cases_comparison_panel <- tabPanel(
 )
 
 ### THIRD PAGE by Chandra B ###
-
 # Cumulative total cases of COVID by racial group
 raw_data_table <- race_data %>%
   select(Date, Cases_White, Cases_Black, Cases_LatinX,
@@ -300,7 +299,6 @@ cases_race_comparison <- tabPanel(
 
 
 ### CONCLUSION by Minjie K ###
-
 conclusion <- tabPanel(
   title = tags$h2("Conclusion"),
   mainPanel(
@@ -350,6 +348,7 @@ conclusion <- tabPanel(
     tags$hr(),
     tags$p("Project by Natassja Bartle, Chandra Burnham, Minjie Kim, Jackie Si, & Grant Yang")
   ))
+
 ### LAYOUT ###
 ui <- navbarPage(
   includeCSS("style.css"),
