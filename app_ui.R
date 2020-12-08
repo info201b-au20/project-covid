@@ -42,7 +42,7 @@ data3_intro <- tags$p("The third dataset we are using is a CSV file of
                       as they go instead of relying fully on web-scraping and 
                       other automated harvesting methods.")
 
-chart1_intro <- tags$p("The first chart explores the number of death across 
+chart1_intro <- tags$p("The first chart explores the number of deaths across 
                        the different states within the U.S. with respect to 
                        time. The reason in which this interactive chart is 
                        provided is that this provides viewers a good starting 
@@ -52,7 +52,7 @@ chart1_intro <- tags$p("The first chart explores the number of death across
                        date/time by selecting both the desired observed state 
                        and the color of the graph.")
 chart2_intro <- tags$p("The second chart delves more so into the racial impacts 
-                       of the 2020 COVID-19 pandemic by examining the number of 
+                       of the 2020 COVID-19 pandemic by comparing the number of 
                        African American positive cases in California and 
                        Washington. The two states were chosen for observation 
                        as we were curious about the implications met within our 
@@ -63,13 +63,13 @@ chart2_intro <- tags$p("The second chart delves more so into the racial impacts
                        each month starting from April to October. Viewers can 
                        select the graph for the state and choose between two 
                        different colors to show the graph.")
-chart3_intro <- tags$p("The Third and final graph illustrates the cumulative 
+chart3_intro <- tags$p("The third and final graph illustrates the cumulative 
                        COVID-19 cases for different races across the United 
                        States over time. This chart was chosen as it is crucial 
                        to visualize how the 2020 COVID-19 pandemic affects 
-                       different racial demographics in our country. It grew to 
-                       be one of our main objectives for examination (the 
-                       impacts on race). Viewers can select the races to display 
+                       different racial demographics in our country. Observing 
+                       the racial impacts became one of our main takeaways for 
+                       this project. Viewers can select the races to display 
                        on a single graph for comparison and the range of dates 
                        to display between April to October.")
     
@@ -192,7 +192,7 @@ state_input <- selectInput(
     )
 # Creates the tab panel
 cases_comparison_panel <- tabPanel(
-  titlePanel("Comparison"),
+  titlePanel("WA/CA Comparison"),
   sidebarLayout(
     sidebarPanel(
         color_input,
