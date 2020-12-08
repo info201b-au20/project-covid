@@ -145,7 +145,7 @@ selectState <- selectInput(
 
 selectColor <- selectInput(
   "color_selected",
-  label = "What is your favorie Color",
+  label = "What is your favorite Color",
   choices = c("Yellow", "Red","Blue")
 )
 death_state_comparision <- tabPanel(
@@ -153,14 +153,24 @@ death_state_comparision <- tabPanel(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
+      p('Select a desinated state and your favorite color.'),
       selectState,
       selectColor
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-      plotlyOutput('plot')
-      
+      plotlyOutput('state_plot'),
+      p(
+        "Source:",
+        a("Race Data Entry - CRDT.csv",
+          href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
+        )
+      ),
+      p('This interactive chart is intended to explore the number of death 
+        across different state with respect to time. This gives us a good tool 
+        to see an overview of how each state was influenced by the the covid-19
+        virus.')
     )
   )
 )
@@ -280,6 +290,7 @@ ui <- navbarPage(
     title = tags$h1("Project COVID-19"),
     selected = tags$h2("Introduction"),
     introduction,
+    death_state_comparision,
     cases_comparison_panel,
     cases_race_comparison    
 )

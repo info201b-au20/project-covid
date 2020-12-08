@@ -24,7 +24,7 @@ make_plot <- function(data, color_input, state_selected){
 
 ###############################################
 ## For the first page by GRANT 
-build_smooth_num_death <- function(data, state_name, color_selected){
+build_smooth_num_death <- function(state_name, color_selected){
   state_race_data <- race_data %>%
     filter(State == state_name)
   state_race_data$Date <- as.Date(paste(substr(state_race_data$Date, 1, 4), substr(state_race_data$Date, 5, 6), "01", sep = "-"))
@@ -44,9 +44,9 @@ build_smooth_num_death <- function(data, state_name, color_selected){
 # Server
 server <- function(input, output) {
   #####First Page #######
-  output$plot <- renderPlotly({
-    plot <- build_smooth_num_death(state_race_data, input$state_name, input$color_selected)
-    ggplotly(plot)
+  output$state_plot <- renderPlotly({
+    state_plot <- build_smooth_num_death(input$state_name, input$color_selected)
+    ggplotly(state_plot)
   })
   
   #####Second Page######
