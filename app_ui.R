@@ -15,7 +15,7 @@ data1_intro <- tags$p("The first dataset we are using is an XML spreadsheet of
                       It is collected by the Washington State Department of 
                       Health.")
 data2_intro <- tags$p("The second dataset we are using is an XML spreadsheet 
-                      of the overall coronavirus cases counts and 
+                      of the overall COVID-19 case counts and 
                       hospitalization/death rates by city, health reporting
                       area, and zip code in King County, Washington, 
                       The data is updated as of October 19, 2020. 
@@ -27,9 +27,9 @@ data2_intro <- tags$p("The second dataset we are using is an XML spreadsheet
                       in the counts and it excludes tests where results are 
                       pending, inconclusive, or that were not performed.")
 data3_intro <- tags$p("The third dataset we are using is a CSV file of 
-                      coronavirus case racial data of states and territories 
+                      COVID-19 cases by racial data of states and territories 
                       in the United States. It contains data about the number 
-                      of cases and deaths of coronavirus by ethnicity. 
+                      of cases and deaths from COVID-19 by ethnicity. 
                       The data spans from April 19, 2020 to October 21, 
                       2020 and is updated twice a week. It has been collected 
                       by the COVID Tracking Project and the Boston University 
@@ -77,8 +77,7 @@ chart3_intro <- tags$p("The third and final graph illustrates the cumulative
 introduction <- tabPanel(
   title = tags$h2("Introduction"),
   mainPanel(
-    tags$h2("Welcome!"),
-    tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
+    tags$h6("Welcome!"),
     tags$h4("Project Mission:"),
     tags$p("As not only individuals who are experiencing this 
                    unprecedented time of a global pandemic and emergency, 
@@ -103,6 +102,7 @@ introduction <- tabPanel(
                     take away newfound knowledge surrounding the 2020 COVID-19 
                     pandemic and its' effects on particular populations. 
                     Thank you, and enjoy!"),
+    tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
     tags$hr(),
     tags$h4("About the Charts:"),
     tags$h5("What are the trends of COVID-19 deaths in different states across 
@@ -130,7 +130,8 @@ introduction <- tabPanel(
     )),
     data1_intro,
     data2_intro,
-    data3_intro
+    data3_intro,
+    tags$hr()
   ))
 
 ### FIRST PAGE by Grant Y ##############################################
@@ -286,10 +287,14 @@ cases_race_comparison <- tabPanel(
       )
       ,
       br(),
-      p(
-        "CHANDRA'S CHART SPIEL/OBSERVATIONS HERE."
-      )
-      
+      p("The purpose of this graph is to display the cases of COVID-19 by race 
+        across the U.S. between April and October of 2020. Though the general 
+        trend of this graph is consistent with the other two observations in 
+        terms of cases rising all across the country, one should note that not 
+        only is the largest data group “unknown,” but that this issue is far 
+        too complex in terms of variables and factors that play into the idea 
+        of a race being biologically more susceptible. Once again, though, 
+        the trend of COVID-19 cases climbing is clear.")
     ))
 )
 
@@ -299,21 +304,21 @@ cases_race_comparison <- tabPanel(
 conclusion <- tabPanel(
   title = tags$h2("Conclusion"),
   mainPanel(
-    tags$h2("Conclsuion"),
-    tags$h4("Key Takeaways"),
-    tags$h5("1. Covid-19 is REAL! And it doesn't seem to be slowing down"),
+    tags$h6("Let's Wrap it Up!"),
+    tags$h4("Key Takeaways:"),
+    tags$h5("COVID-19 is REAL! And it doesn't seem to be slowing down..."),
     tags$p("As we can see from the 'State Death Trends', it shows that there is 
-           an increasing number of deaths due to Covid-19.  From this graph we
-           can also conclude that the spread of Covid-19 is not slowing down
+           an increasing number of deaths due to COVID-19.  From this graph we
+           can also conclude that the spread of COVID-19 is not slowing down
            rather it is being spread faster than it previously has been. We can
            conclude this based on the number of deaths because as the number of
            deaths increase it must mean that more people are contracting the 
-           Covid-19 virus."),
-    tags$h5("2. Just because you're in a different state doesn't mean
-            you are safe"),
-    tags$p("We compared 2 different states and how Covid-19 affected one
-           particular race(African-American) in both states.  As y'all can 
-           proabably guess the Covid-19 case trend was similar for both states:
+           COVID-19 virus."),
+    tags$h5("Just because you're in a different state doesn't mean
+            you are safe..."),
+    tags$p("We compared 2 different states and how COVID-19 affected one
+           particular race(African-American) in both states.  As you all can 
+           proabably guess the COVID-19 case trend was similar for both states:
            it had an upward trend and many people got it.  While the physical 
            number of cases were different for both state, that could be due to
            the difference in population between Washington and California.  In 
@@ -321,23 +326,29 @@ conclusion <- tabPanel(
            whether it is a highly populated state or a lowly populated state,
            people should still take precautions against the virus because it 
            doesn't care what state you are in."),
-    tags$h5("3. While we would like to say that a certain race is more
-            susceptible to Covid-19, unfortunately we can't conclude that"),
+    tags$h5("While we would like to say that a certain race is more
+            susceptible to COVID-19, unfortunately we can't conclude that..."),
     tags$p("Based on the 'Cases by Race' graph, we could quickly conclude that
-           white people are more susceptible to Covid-19, but that's not 
+           white people are more susceptible to COVID-19, but that's not 
            neccesarily the case. There might be more cases for white people 
            simply because the majority of people who live in the USA are white.
            Hispanic/Latino people could have more cases than some other races
            becuase there are more people that identify with that race that are
            from areas that are lower in the socio-economic scale and they simply
            don't have the means to have good quality personal protection
-           equipment or the means to take time off work.  Bottum line is that we
+           equipment or the means to take time off work.  Bottom line is that we
            are not able to conclude that based on biology a certain race is more
-           suseptible to contracting Covid-19; we have to consider other
+           suseptible to contracting COVID-19; we have to consider other
            factors."),
-    tags$h5("Last but not least, remember to..."),
-    tags$img(src = "https://www.statesboroga.gov/wp-content/uploads/2020/07/Copy-of-Copy-of-Copy-of-Copy-of-30000.png"),
-    
+    tags$hr(),
+    tags$h4("Last but not least, remember to:"),
+    tags$p(tags$a(
+      href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html",
+      "CDC: How to Protect Yourself & Others"
+    )),
+    tags$img(src = "https://pbs.twimg.com/media/EdeeixaXYAADzfC.png"),
+    tags$hr(),
+    tags$p("Project by Natassja Bartle, Chandra Burnham, Minjie Kim, Jackie Si, & Grant Yang")
   ))
 ### LAYOUT ###
 ui <- navbarPage(
