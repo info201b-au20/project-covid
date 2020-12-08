@@ -10,16 +10,17 @@ unique(race_data$State)
 make_plot <- function(data, color_input, state_selected){
       black_data <- race_data %>%
         filter(State == state_selected)
-      black_data$Date <- as.Date(paste(substr(black_data$Date, 1, 4), substr(black_data$Date, 5, 6), "01", sep = "-"))
+        black_data$Date <- unique(as.Date(as.character(black_data$Date), format = "%Y%m%d"))
  # Make plot using ggplot
       plot_covid <- ggplot(data = black_data) +
-        geom_smooth(
+        geom_point(
         mapping = aes_string(x = black_data$Date, y = black_data$Cases_Black),
         color = color_input
       ) +
       scale_x_date(date_breaks = "1 month") +
-      ggtitle("Compare the number of cases of African Americans in WA/CA from April to October 2020") +
-      labs(x = "Date(month)", y = "Cases")
+      ggtitle("Compare the number of cases of African Americans in WA/CA 
+              from April to October 2020") +
+      labs(x = "Date", y = "Cases")
 }
 
 ###############################################
