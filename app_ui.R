@@ -168,10 +168,11 @@ death_state_comparision <- tabPanel(
           href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
         )
       ),
-      p('This interactive chart is intended to explore the number of deaths 
-        across different state with respect to time. This gives us a good tool 
-        to see an overview of how each state was influenced by the the COVID-19
-        virus in relation to total deaths. The general trend across states is
+      p('This interactive chart is intended to explore the number as
+        well as the general trend of total deaths across different states 
+        with respect to time progression. This gives us a good tool to see an 
+        overview of how each state was influenced by the the COVID-19 virus in 
+        relation to total deaths. The general trend across states is
         a steady rise in lives lost to the 2020 pandemic.')
     )
   )
