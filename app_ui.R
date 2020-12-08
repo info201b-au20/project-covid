@@ -3,6 +3,7 @@ library(plotly)
 library(ggplot2)
 library(tidyverse)
 race_data <- read.csv("./data/Race Data Entry - CRDT.csv")
+
 ### INTRODUCTION by Natassja B ###
 data1_intro <- tags$p("The first dataset we are using is an XML spreadsheet of 
                       the number of cases of 2020 COVID-19 deaths by week of 
@@ -72,14 +73,14 @@ chart3_intro <- tags$p("The third and final graph illustrates the cumulative
                        this project. Viewers can select the races to display 
                        on a single graph for comparison and the range of dates 
                        to display between April to October.")
-    
+
 introduction <- tabPanel(
-    title = tags$h2("Introduction"),
-        mainPanel(
-            tags$h2("Introduction"),
-            tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
-            tags$h4("Project Mission:"),
-            tags$p("As not only individuals who are experiencing this 
+  title = tags$h2("Introduction"),
+  mainPanel(
+    tags$h2("Introduction"),
+    tags$img(src = "https://psychology.org.au/getmedia/9195dfbe-455a-4ee6-b470-ef8301acc3bd/20InPsych-JunJul-LanguageFear-p16-1000x500.jpg?width=1000&height=500&ext=.jpg"),
+    tags$h4("Project Mission:"),
+    tags$p("As not only individuals who are experiencing this 
                    unprecedented time of a global pandemic and emergency, 
                    but as students at the University of Washington, a 
                    university that has notably been forefronting Pandemic 
@@ -98,40 +99,40 @@ introduction <- tabPanel(
                    to the metaphorical table of discussion on the critical topic 
                    of COVID-19, especially in regards to the impacts surrounding 
                    race in the U.S."),
-            tags$h5("Overall, we hope that our viewers, such as yourself, can 
+    tags$h5("Overall, we hope that our viewers, such as yourself, can 
                     take away newfound knowledge surrounding the 2020 COVID-19 
                     pandemic and its' effects on particular populations. 
                     Thank you, and enjoy!"),
-            tags$hr(),
-            tags$h4("About the Charts:"),
-            tags$h5("How have COVID-19 deaths affected different states across 
+    tags$hr(),
+    tags$h4("About the Charts:"),
+    tags$h5("What are the trends of COVID-19 deaths in different states across 
                     the U.S. throughout the 2020 pandemic?"),
-            chart1_intro, 
-            tags$h5("How has COVID-19 impacted African American populations in 
-                    specifically Washington and California regarding case numbers?"),
-            chart2_intro, 
-            tags$h5("How has COVID-19 affected different racial populations 
+    chart1_intro, 
+    tags$h5("How has COVID-19 impacted African American populations 
+                    specifically between Washington and California regarding case numbers?"),
+    chart2_intro, 
+    tags$h5("How has COVID-19 affected different racial populations 
                     across the U.S.?"),
-            chart3_intro,
-            tags$hr(),
-            tags$h4("About the Data and the Sources:"),
-            tags$p(tags$a(
-                href = "https://www.doh.wa.gov/Emergencies/COVID19/DataDashboard",
-                "Dataset Source 1: Washington State Department of Health"
-            )),
-            tags$p(tags$a(
-                href = "https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx",
-                "Dataset Source 2: King County COVID-19 Data Dashboards"
-            )),
-            tags$p(tags$a(
-                href = "https://covidtracking.com/race",
-                "Dataset Source 3: The COVID Tracking Project"
-            )),
-            data1_intro,
-            data2_intro,
-            data3_intro
-        ))
-  
+    chart3_intro,
+    tags$hr(),
+    tags$h4("About the Data and the Sources:"),
+    tags$p(tags$a(
+      href = "https://www.doh.wa.gov/Emergencies/COVID19/DataDashboard",
+      "Dataset Source 1: Washington State Department of Health"
+    )),
+    tags$p(tags$a(
+      href = "https://www.kingcounty.gov/depts/health/covid-19/data/daily-summary.aspx",
+      "Dataset Source 2: King County COVID-19 Data Dashboards"
+    )),
+    tags$p(tags$a(
+      href = "https://covidtracking.com/race",
+      "Dataset Source 3: The COVID Tracking Project"
+    )),
+    data1_intro,
+    data2_intro,
+    data3_intro
+  ))
+
 ### FIRST PAGE by Grant Y ##############################################
 stateNames <- race_data %>%
   select(State) %>% 
@@ -139,21 +140,21 @@ stateNames <- race_data %>%
 
 selectState <- selectInput(
   "state_name",
-  label = "Select A State",
+  label = "State:",
   choices = stateNames
 )
 
 selectColor <- selectInput(
   "color_selected",
-  label = "What is your favorite Color",
+  label = "Color:",
   choices = c("Yellow", "Red","Blue")
 )
 death_state_comparision <- tabPanel(
-  titlePanel("Trend in Total Death"),
+  titlePanel("State Death Trends"),
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      p('Select a desinated state and your favorite color.'),
+      p('Select a state and a favorite color.'),
       selectState,
       selectColor
     ),
@@ -167,10 +168,11 @@ death_state_comparision <- tabPanel(
           href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
         )
       ),
-      p('This interactive chart is intended to explore the number of death 
+      p('This interactive chart is intended to explore the number of deaths 
         across different state with respect to time. This gives us a good tool 
-        to see an overview of how each state was influenced by the the covid-19
-        virus.')
+        to see an overview of how each state was influenced by the the COVID-19
+        virus in relation to total deaths. The general trend across states is
+        a steady rise in lives lost to the 2020 pandemic.')
     )
   )
 )
@@ -178,40 +180,46 @@ death_state_comparision <- tabPanel(
 ### SECOND PAGE by Jackie S #############################################
 # Color input of the line chart
 color_input <- selectInput(
-      inputId = "color_input",
-      label = "Color",
-      choices = list("Red" = "red", "Green" = "green")
-    )
+  inputId = "color_input",
+  label = "Color:",
+  choices = list("Red" = "red", "Green" = "green")
+)
 # State input of the line chart
 state_input <- selectInput(
-      inputId = "Statename",
-      label = "State to show:",
-      choices =  c("CA" = "CA",
-                   "WA" = "WA"),
-      selected = "WA"
-    )
+  inputId = "Statename",
+  label = "State:",
+  choices =  c("CA" = "CA",
+               "WA" = "WA"),
+  selected = "WA"
+)
 # Creates the tab panel
 cases_comparison_panel <- tabPanel(
   titlePanel("WA/CA Comparison"),
   sidebarLayout(
     sidebarPanel(
-        color_input,
-        state_input
+      p('Select a state and a color.'),
+      state_input,
+      color_input
     ),
-
-mainPanel(
-  plotlyOutput('plot'),
-  p(
-    "Source:",
-    a("Race Data Entry - CRDT.csv",
-      href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
+    
+    mainPanel(
+      plotlyOutput('plot'),
+      p(
+        "Source:",
+        a("Race Data Entry - CRDT.csv",
+          href = "https://github.com/info201b-au20/project-covid/blob/gh-pages/data/Race%20Data%20Entry%20-%20CRDT.csv"
+        )
+      ),
+      p(
+        "The two graphs are intended to find out the general trend of the 
+        number of COVID-19 cases of African Americans in WA and CA based 
+        on the position of the red dots of each month. The general trend 
+        shown in each scatterplot graph is very similar in that the number 
+        of cases of African Americans in both CA and WA are skyrocketing 
+        from April to October."
+      )
     )
-  ),
-  p(
-    "The two graphs are intended to find out the general trend of the number of Covid cases of African Americans in WA and CA based on the position of the red dots of each month. The general trend shown in each scatterplot graph is very similar in that the number of cases of African Americans in both CA and WA are skyrocketing from April to October."
-   )
   )
- )
 )
 
 ### THIRD PAGE by Chandra B ###
@@ -244,9 +252,9 @@ cases_race_comparison <- tabPanel(
   br(),
   sidebarLayout(
     sidebarPanel(
-      helpText("Select data to display."),
+      p("Select data to display."),
       checkboxGroupInput("checkboxRaces",
-                         label = "Race",
+                         label = "Race:",
                          choices = c("White", "Black", "Hispanic/Latino",
                                      "Asian", "American Indian/Alaska Native",
                                      "Native Hawaiian/Pacific Islander",
@@ -257,7 +265,7 @@ cases_race_comparison <- tabPanel(
                                       "Multiracial", "Other", "Unknown")),
       dateRangeInput(
         inputId = "dateRangeInput",
-        label = "Date range",
+        label = "Date Range:",
         start = "2020-04-12",
         end = "2020-10-28",
         min = "2020-04-12",
@@ -286,11 +294,11 @@ cases_race_comparison <- tabPanel(
 
 ### LAYOUT ###
 ui <- navbarPage(
-    includeCSS("style.css"),
-    title = tags$h1("Project COVID-19"),
-    selected = tags$h2("Introduction"),
-    introduction,
-    death_state_comparision,
-    cases_comparison_panel,
-    cases_race_comparison    
+  includeCSS("style.css"),
+  title = tags$h1("Project COVID-19"),
+  selected = tags$h2("Introduction"),
+  introduction,
+  death_state_comparision,
+  cases_comparison_panel,
+  cases_race_comparison    
 )
