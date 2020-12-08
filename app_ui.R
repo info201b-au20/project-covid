@@ -147,7 +147,7 @@ selectState <- selectInput(
 selectColor <- selectInput(
   "color_selected",
   label = "Color:",
-  choices = c("Yellow", "Red","Blue")
+  choices = list("Purple" = "#865081", "Orange" = "#f69a69", "Red" = "#d32a3f")
 )
 death_state_comparision <- tabPanel(
   titlePanel("State Death Trends"),
@@ -182,7 +182,7 @@ death_state_comparision <- tabPanel(
 color_input <- selectInput(
   inputId = "color_input",
   label = "Color:",
-  choices = list("Red" = "red", "Green" = "green")
+  choices = list("Pink" = "#f97a85", "Blue" = "#3c73a9")
 )
 # State input of the line chart
 state_input <- selectInput(
