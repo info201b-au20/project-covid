@@ -276,7 +276,7 @@ cases_race_comparison <- tabPanel(
 ### LAYOUT ###
 ui <- navbarPage(
     includeCSS("style.css"),
-    title = tags$h1("COVID-19 & the Effects on Racial Groups"),
+    title = tags$h1("Project COVID-19"),
     selected = tags$h2("Introduction"),
     introduction,
     cases_comparison_panel,
