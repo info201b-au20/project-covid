@@ -208,7 +208,7 @@ mainPanel(
     )
   ),
   p(
-    "The two graphs are intended to find out the general trend of the number of Covid cases of African Americans in WA and CA based on the position of the red dots of each month. The general trend shown in each line chart is very similar in that the number of cases of African Americans in both CA and WA are skyrocketing from April to October."
+    "The two graphs are intended to find out the general trend of the number of Covid cases of African Americans in WA and CA based on the position of the red dots of each month. The general trend shown in each scatterplot graph is very similar in that the number of cases of African Americans in both CA and WA are skyrocketing from April to October."
    )
   )
  )
